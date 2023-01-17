@@ -105,10 +105,189 @@
                             <h4 class="text-section">Componentes</h4>
                         </li>
                         <li class="nav-item">
-                            <a href="#">
-                                <i class="fas fa-cog"></i>
-                                <p>Menu</p>
+                            <a data-toggle="collapse" href="#RiesgosProcesos">
+                                <i class="fas fa-box"></i>
+                                <p>Riesgos en Procesos</p>
+                                <span class="caret"></span>
                             </a>
+                            <div class="collapse" id="RiesgosProcesos">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Mapa de procesos</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Procesos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="collapse" href="#RiesgosProcesos1">
+                                            <i class="fas fa-box"></i>
+                                            <p>Riesgos en Procesos</p>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="RiesgosProcesos1">
+                                            <ul class="nav nav-collapse">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Identificación del riesgo</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Riesgo inherente</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Riesgo residual</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Monitoreo y revisión</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Reportes de procesos, informes y graficas</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Reporte de proceso y auditoria</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#Riesgosproyectos">
+                                <i class="fas fa-box"></i>
+                                <p>riesgos en proyectos</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="Riesgosproyectos">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Proyectos</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-toggle="collapse" href="#Riesgosproyecto2">
+                                            <i class="fas fa-box"></i>
+                                            <p>Riesgos en proyecto</p>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <div class="collapse" id="Riesgosproyecto2">
+                                            <ul class="nav nav-collapse">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Identificación del riesgo</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Riesgo inherente</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Riesgo residual</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="sub-item">Monitoreo y revisión</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Reporte de proyectos, informes y gracias</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Reporte de proyecto y auditoria</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#Parametrización">
+                                <i class="fas fa-box"></i>
+                                <p>Parametrización</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="Parametrización">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Registrar macroproceso, procesos, subprocesos</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Registrar actividades</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Definir responsables</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Registrar causas</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Registrar consecuencias</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Definir escala de probabilidad e impacto</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Registrar medidas de prevención y recomendaciones</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Administrar indicadores</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Definir lista de contratista</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Definir lista de contratante</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="sub-item">Definir interventoría asignada</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                     <!-- End Sub Menu -->
