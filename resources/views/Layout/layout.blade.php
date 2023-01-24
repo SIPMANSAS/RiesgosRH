@@ -113,7 +113,7 @@
                             <div class="collapse" id="RiesgosProcesos">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ url('import/documents') }}">
                                             <span class="sub-item">Mapa de procesos</span>
                                         </a>
                                     </li>
@@ -316,7 +316,7 @@
                         </ul>
                     </nav>
                     <div class="copyright ml-auto">
-                        Copyright © 2022, powered by <a href="tel:+57 3114360830">jhonatan fernandez</a>
+                        Copyright © 2022, powered by <a href="tel:+57 3114360830"></a>
                     </div>
                 </div>
             </footer>
