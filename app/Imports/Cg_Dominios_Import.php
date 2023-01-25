@@ -17,8 +17,8 @@ class Cg_Dominios_Import implements ToModel
         return new cg_dominios([
             'descripcion' => $row[0],
             'tipo_estado' => $row[1],
-            'estado' => $row[1],
-            'id_grupo_dominio' => $row[1],
+            'estado' => $row[2],
+            'id_grupo_dominio' => $row[3],
         ]);
     }
 }

@@ -263,7 +263,8 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <span class="sub-item">Registrar medidas de prevención y recomendaciones</span>
+                                            <span class="sub-item">Registrar medidas de prevención y
+                                                recomendaciones</span>
                                         </a>
                                     </li>
                                     <li>

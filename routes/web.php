@@ -19,5 +19,5 @@ Route::get('/', function () {
 
 Route::get('import/documents', [ImportExportController::class, 'index']);
 Route::post('import/CG-Dominios/{id}', [ImportExportController::class, 'Import_CG_Dominios'])->name('import.cg.dominios');
-Route::post('import/label/{id}', [ImportExportController::class, 'Import_CG_Grupo_Dominios'])->name('import.cg.grupo.dominios');
-Route::post('import/factory/{id}', [ImportExportController::class, 'Import_CG_Valores_Dominio'])->name('import.cg.valores.dominios');
+Route::post('import/CG_Grupo_Dominios/{id}', [ImportExportController::class, 'Import_CG_Grupo_Dominios'])->name('import.cg.grupo.dominios');
+Route::post('import/CG_Valores_Dominio/{id}', [ImportExportController::class, 'Import_CG_Valores_Dominio'])->name('import.cg.valores.dominios');
