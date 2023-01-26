@@ -134,7 +134,7 @@ class MigracionsTable extends Migration
             $table->integer('codigo');
             $table->string('nombre', 30);
             $table->integer('tipo_estado');
-            $table->integer('estado')->primary();
+            $table->integer('estado')->unique();
             $table->timestamps();
         });
 
@@ -149,8 +149,8 @@ class MigracionsTable extends Migration
 
         Schema::create('rg_ciudades', function (Blueprint $table) {
             $table->integer('codigo_pais')->primary();
-            $table->integer('codigo_departamento')->primary();
-            $table->integer('codigo')->primary();
+            $table->integer('codigo_departamento')->unique();
+            $table->integer('codigo')->unique();
             $table->string('nombre', 100);
             $table->string('es_capital', 1)->nullable();
             $table->integer('tipo_estado')->nullable();
@@ -260,8 +260,8 @@ class MigracionsTable extends Migration
 
         Schema::create('ter_cruce_terceros', function (Blueprint $table) {
             $table->integer('id_tercero_principal')->primary();
-            $table->integer('id_tercero_secundario')->primary();
-            $table->integer('consecutivo')->primary();
+            $table->integer('id_tercero_secundario')->unique();
+            $table->integer('consecutivo')->unique();
             $table->integer('tipo_estado');
             $table->date('fecha_inicial');
             $table->date('fecha_vigencia')->nullable();
@@ -272,7 +272,7 @@ class MigracionsTable extends Migration
 
         Schema::create('rie_causas_riesgo', function (Blueprint $table) {
             $table->integer('id_causa')->primary();
-            $table->integer('id_riesgo')->primary();
+            $table->integer('id_riesgo')->unique();
             $table->integer('probabilidad');
             $table->text('comentarios');
             $table->timestamps();
@@ -280,7 +280,7 @@ class MigracionsTable extends Migration
 
         Schema::create('rie_consecuencias_riesgo', function (Blueprint $table) {
             $table->integer('id_riesgo')->primary();
-            $table->integer('id_consecuencia')->primary();
+            $table->integer('id_consecuencia')->unique();
             $table->integer('impacto');
             $table->string('comentarios', 500);
             $table->timestamps();
