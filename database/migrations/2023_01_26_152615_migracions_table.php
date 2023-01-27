@@ -14,148 +14,132 @@ class MigracionsTable extends Migration
     public function up()
     {
         Schema::create('cg_dominios', function (Blueprint $table) {
-            $table->increments("identificador");
+            $table->integer("identificador")->primary();
             $table->string('descripcion', 50)->nullable();
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->integer('id_grupo_dominio');
-            $table->timestamps();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
+            $table->integer('id_grupo_dominio')->nullable();
         });
 
         Schema::create('cg_grupo_dominios', function (Blueprint $table) {
-            $table->increments("identificador");
+            $table->integer("identificador")->primary();
             $table->string('nombre', 50)->nullable();
-            $table->timestamps();
         });
 
         Schema::create('cg_grupo_valores_dominio', function (Blueprint $table) {
-            $table->increments("identificador");
-            $table->string('nombre', 50);
-            $table->integer('id_grupo_dominio');
-            $table->timestamps();
+            $table->integer("identificador")->primary();
+            $table->string('nombre', 50)->nullable();
+            $table->integer('id_grupo_dominio')->nullable();
         });
 
         Schema::create('cg_valores_dominio', function (Blueprint $table) {
-            $table->integer('id_dominio');
-            $table->increments('identificador');
+            $table->integer('id_dominio')->nullable();
+            $table->integer('identificador')->primary();
             $table->string('nombre', 200)->nullable();
             $table->string('descripcion', 200)->nullable();
-            $table->integer('tipo_estado');
-            $table->integer('estado');
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
             $table->string('id_alfanumerico', 20)->nullable();
-            $table->integer('id_vdom_padre');
-            $table->integer('id_grupo_valor_dominio');
-            $table->timestamps();
+            $table->integer('id_vdom_padre')->nullable();
+            $table->integer('id_grupo_valor_dominio')->nullable();
         });
 
         Schema::create('par_tipos_categoria', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('id_tipo_categoria');
+            $table->integer('id_tipo_categoria')->primary();
             $table->string('nombre', 255)->nullable();
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->timestamps();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
         });
 
         Schema::create('par_tipos_fase', function (Blueprint $table) {
-            $table->increments('id_fase');
+            $table->integer('id_fase')->primary();
             $table->string('descripcion', 50)->nullable();
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->timestamps();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
         });
 
         Schema::create('par_categorias', function (Blueprint $table) {
             $table->integer('id_categoria')->primary();
             $table->integer('id_categoria_padre')->nullable();
-            $table->string('descripcion', 50);
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->integer('id_tipo_categoria');
-            $table->timestamps();
+            $table->string('descripcion', 50)->nullable();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
+            $table->integer('id_tipo_categoria')->nullable();
         });
 
         Schema::create('rg_paises', function (Blueprint $table) {
             $table->integer('codigo')->primary();
-            $table->string('nombre', 30);
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->timestamps();
+            $table->string('nombre', 30)->nullable();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
         });
 
         Schema::create('rie_tratamiento_riesgo', function (Blueprint $table) {
             $table->integer('id_tratamiento')->primary();
-            $table->integer('id_decision');
+            $table->integer('id_decision')->nullable();
             $table->string('plan_de_accion', 1000)->nullable();
-            $table->integer('id_responsable');
-            $table->integer('fecha_implementacion');
-            $table->integer('id_indicador');
-            $table->integer('id_periodicidad_medicion');
-            $table->integer('id_documento_relacionado');
-            $table->integer('id_documentado');
-            $table->integer('id_funcionamiento');
-            $table->integer('id_perioricidad');
-            $table->integer('id_es_obligatorio');
-            $table->integer('id_naturaleza');
-            $table->integer('id_cubrimiento');
-            $table->timestamps();
+            $table->integer('id_responsable')->nullable();
+            $table->integer('fecha_implementacion')->nullable();
+            $table->integer('id_indicador')->nullable();
+            $table->integer('id_periodicidad_medicion')->nullable();
+            $table->integer('id_documento_relacionado')->nullable();
+            $table->integer('id_documentado')->nullable();
+            $table->integer('id_funcionamiento')->nullable();
+            $table->integer('id_perioricidad')->nullable();
+            $table->integer('id_es_obligatorio')->nullable();
+            $table->integer('id_naturaleza')->nullable();
+            $table->integer('id_cubrimiento')->nullable();
         });
 
         Schema::create('par_causas', function (Blueprint $table) {
             $table->integer('id_causa')->primary();
             $table->string('descripcion', 500);
-            $table->integer('tipo_estado');
-            $table->integer('estado');
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
             $table->integer('id_categoria')->nullable();
-            $table->timestamps();
         });
 
         Schema::create('par_consecuencias', function (Blueprint $table) {
             $table->integer('id_consecuencia')->primary();
-            $table->string('descripcion', 500);
-            $table->integer('tipo_estado');
-            $table->integer('estado');
+            $table->string('descripcion', 500)->nullable();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
             $table->integer('id_categoria')->nullable();
-            $table->timestamps();
         });
 
         Schema::create('par_fases', function (Blueprint $table) {
             $table->integer('id_fase')->primary();
             $table->text('descripcion')->nullable();
-            $table->integer('id_fase_padre');
-            $table->integer('id_tipo_fase');
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->timestamps();
+            $table->integer('id_fase_padre')->nullable();
+            $table->integer('id_tipo_fase')->nullable();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
         });
 
         Schema::create('rg_departamentos', function (Blueprint $table) {
             $table->integer('codigo_pais')->primary();
-            $table->integer('codigo');
-            $table->string('nombre', 30);
-            $table->integer('tipo_estado');
+            $table->integer('codigo')->nullable();
+            $table->string('nombre', 30)->nullable();
+            $table->integer('tipo_estado')->nullable();
             $table->integer('estado')->unique();
-            $table->timestamps();
         });
 
         Schema::create('par_actividades', function (Blueprint $table) {
             $table->integer('id_actividad')->primary();
-            $table->integer('id_proceso');
-            $table->integer('tipo_estado');
-            $table->integer('estado');
-            $table->text('descripcion');
-            $table->timestamps();
+            $table->integer('id_proceso')->nullable();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
+            $table->text('descripcion')->nullable();
         });
 
         Schema::create('rg_ciudades', function (Blueprint $table) {
             $table->integer('codigo_pais')->primary();
             $table->integer('codigo_departamento')->unique();
             $table->integer('codigo')->unique();
-            $table->string('nombre', 100);
+            $table->string('nombre', 100)->nullable();
             $table->string('es_capital', 1)->nullable();
             $table->integer('tipo_estado')->nullable();
             $table->integer('estado')->nullable();
-            $table->timestamps();
         });
 
         Schema::create('ter_terceros', function (Blueprint $table) {
@@ -188,59 +172,55 @@ class MigracionsTable extends Migration
             $table->string('direccion', 100)->nullable();
             $table->string('correo_electronico', 50)->nullable();
             $table->integer('telefono')->nullable();
-            $table->timestamps();
         });
 
         Schema::create('pro_proyectos', function (Blueprint $table) {
             $table->integer('id_proyecto')->primary();
-            $table->string('nombre', 500);
-            $table->integer('id_contratista');
-            $table->integer('id_contratante');
-            $table->integer('id_interventoria');
-            $table->string('objeto_contraactual', 500);
-            $table->integer('id_etapa_proyecto');
-            $table->integer('id_actividad');
-            $table->integer('id_responsable');
-            $table->integer('id_formato');
-            $table->string('archivos', 500)->nullable();
+            $table->text('nombre')->nullable();
+            $table->integer('id_contratista')->nullable();
+            $table->integer('id_contratante')->nullable();
+            $table->integer('id_interventoria')->nullable();
+            $table->text('objeto_contraactual')->nullable();
+            $table->integer('id_etapa_proyecto')->nullable();
+            $table->integer('id_actividad')->nullable();
+            $table->integer('id_responsable')->nullable();
+            $table->integer('id_formato')->nullable();
+            $table->text('archivos')->nullable();
             $table->integer('id_tipo_contratacion')->nullable();
-            $table->timestamps();
         });
 
         Schema::create('rie_riesgos', function (Blueprint $table) {
             $table->integer('id_riesgo')->primary();
-            $table->string('descripcion', 50);
-            $table->integer('probabilidad');
-            $table->integer('impacto');
+            $table->string('descripcion', 50)->nullable();
+            $table->integer('probabilidad')->nullable();
+            $table->integer('impacto')->nullable();
             $table->integer('id_categoria')->nullable();
-            $table->integer('id_fase');
-            $table->integer('tipo_estado');
-            $table->integer('estado');
+            $table->integer('id_fase')->nullable();
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('estado')->nullable();
             $table->integer('id_actividad')->nullable();
             $table->integer('id_proyecto')->nullable();
-            $table->string('nombre_corto', 5);
-            $table->date('fecha_identificacion');
-            $table->integer('id_tipo_asignacion');
-            $table->string('factores_riesgo', 500)->nullable();
-            $table->timestamps();
+            $table->string('nombre_corto', 20)->nullable();
+            $table->date('fecha_identificacion')->nullable();
+            $table->integer('id_tipo_asignacion')->nullable();
+            $table->text('factores_riesgo')->nullable();
         });
 
         Schema::create('rie_seguimiento', function (Blueprint $table) {
             $table->integer('id_seguimiento')->primary();
-            $table->integer('id_periodo');
-            $table->text('descripcion_seguimiento');
-            $table->integer('id_riesgo');
-            $table->integer('probabilidad');
-            $table->integer('impacto');
+            $table->integer('id_periodo')->nullable();
+            $table->text('descripcion_seguimiento')->nullable();
+            $table->integer('id_riesgo')->nullable();
+            $table->integer('probabilidad')->nullable();
+            $table->integer('impacto')->nullable();
             $table->text('lecciones_aprendidas')->nullable();
-            $table->integer('id_afectividad_tratamiento');
-            $table->integer('id_clasificacion');
+            $table->integer('id_afectividad_tratamiento')->nullable();
+            $table->integer('id_clasificacion')->nullable();
             $table->integer('id_tolerabilidad')->nullable();
             $table->text('decisiones')->nullable();
-            $table->text('resultado_indicador');
-            $table->text('factores_riesgo');
-            $table->text('medidas');
-            $table->timestamps();
+            $table->text('resultado_indicador')->nullable();
+            $table->text('factores_riesgo')->nullable();
+            $table->text('medidas')->nullable();
         });
 
         Schema::create('ter_canales_contacto', function (Blueprint $table) {
@@ -255,35 +235,42 @@ class MigracionsTable extends Migration
             $table->integer('id_pais')->nullable();
             $table->integer('id_departamento')->nullable();
             $table->integer('id_ciudad')->nullable();
-            $table->timestamps();
         });
 
         Schema::create('ter_cruce_terceros', function (Blueprint $table) {
             $table->integer('id_tercero_principal')->primary();
             $table->integer('id_tercero_secundario')->unique();
             $table->integer('consecutivo')->unique();
-            $table->integer('tipo_estado');
-            $table->date('fecha_inicial');
+            $table->integer('tipo_estado')->nullable();
+            $table->date('fecha_inicial')->nullable();
             $table->date('fecha_vigencia')->nullable();
-            $table->integer('vdom_tipo_relacion');
-            $table->integer('estado');
-            $table->timestamps();
+            $table->integer('vdom_tipo_relacion')->nullable();
+            $table->integer('estado')->nullable();
         });
 
         Schema::create('rie_causas_riesgo', function (Blueprint $table) {
             $table->integer('id_causa')->primary();
             $table->integer('id_riesgo')->unique();
-            $table->integer('probabilidad');
-            $table->text('comentarios');
-            $table->timestamps();
+            $table->integer('probabilidad')->nullable();
+            $table->text('comentarios')->nullable();
         });
 
         Schema::create('rie_consecuencias_riesgo', function (Blueprint $table) {
             $table->integer('id_riesgo')->primary();
             $table->integer('id_consecuencia')->unique();
-            $table->integer('impacto');
-            $table->string('comentarios', 500);
-            $table->timestamps();
+            $table->integer('impacto')->nullable();
+            $table->text('comentarios')->nullable();
+        });
+
+        Schema::create('sg_estados', function (Blueprint $table) {
+            $table->integer('tipo_estado')->nullable();
+            $table->integer('identificador')->nullable();
+            $table->string('nombre', 30)->nullable();
+        });
+
+        Schema::create('sg_tipos_estado', function (Blueprint $table) {
+            $table->integer('identificador')->nullable();
+            $table->string('nombre', 30)->nullable();
         });
     }
 
@@ -317,5 +304,7 @@ class MigracionsTable extends Migration
         Schema::dropIfExists('ter_cruce_terceros');
         Schema::dropIfExists('rie_causas_riesgo');
         Schema::dropIfExists('rie_consecuencias_riesgo');
+        Schema::dropIfExists('sg_estados');
+        Schema::dropIfExists('sg_tipos_estado');
     }
 }
