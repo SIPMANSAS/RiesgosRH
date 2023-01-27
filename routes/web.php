@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImportExportController;
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,10 @@ use App\Http\Controllers\ImportExportController;
 
 Route::get('/', function () {
     return view('Layout.layout');
+});
+
+Route::get('/configuration', function () {
+    Artisan::call('migrate');
 });
 
 Route::get('import/documents', [ImportExportController::class, 'index']);
