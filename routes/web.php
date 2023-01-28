@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDominiosController;
 use App\Http\Controllers\AdminRegionesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -17,14 +18,17 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Route::get('/', function () {
-    return redirect('Administrar/regiones');
+    return redirect('Administrar/dominios');
 });
 
 Route::get('inicio', [HomeController::class, 'index']);
 
+Route::get('Administrar/dominios', [AdminDominiosController::class, 'index']);
+Route::get('Administrar/dominios/show/{id}', [AdminDominiosController::class, 'ShowDominiosGroup']);
+
 Route::get('Administrar/regiones', [AdminRegionesController::class, 'index']);
-Route::get('Administrar/regiones/pais', [AdminRegionesController::class, 'ShowPais']);
-Route::get('Administrar/regiones/pais/estado', [AdminRegionesController::class, 'ShowEstado']);
+Route::get('Administrar/regiones/pais/{id}', [AdminRegionesController::class, 'ShowPais']);
+Route::get('Administrar/regiones/pais/estado/{idCountry}/{idDepart}', [AdminRegionesController::class, 'ShowEstado']);
 
 
 Route::get('import/documents', [ImportExportController::class, 'index']);

@@ -1,4 +1,22 @@
 @extends('layout/layout')
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('table').DataTable({
+                "order": [
+                    [2, 'asc']
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                },
+                "lengthMenu": [
+                    [5, 10, -1],
+                    [5, 10, "Todos"]
+                ]
+            });
+        });
+    </script>
+@endpush
 @section('barra-superior')
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
         <h2 class="text-white pb-2 fw-bold">Administrar Regiones</h2>
@@ -12,7 +30,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Código</p>
-                            <h4 class="card-title">1</h4>
+                            <h4 class="card-title">{{ $DominiosPais[0]->codigo }}</h4>
                         </div>
                     </div>
                 </div>
@@ -22,7 +40,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Nombre</p>
-                            <h4 class="card-title">COLOMBIA</h4>
+                            <h4 class="card-title">{{ $DominiosPais[0]->nombre }}</h4>
                         </div>
                     </div>
                 </div>
@@ -32,7 +50,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Tipo Estado</p>
-                            <h4 class="card-title">PAISES</h4>
+                            <h4 class="card-title">{{ $DominiosPais[0]->tipo_estado }}</h4>
                         </div>
                     </div>
                 </div>
@@ -42,7 +60,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Estado</p>
-                            <h4 class="card-title">ACTIVO</h4>
+                            <h4 class="card-title">{{ $DominiosPais[0]->estado }}</h4>
                         </div>
                     </div>
                 </div>
@@ -56,7 +74,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Código</p>
-                            <h4 class="card-title">1</h4>
+                            <h4 class="card-title">{{ $DominiosDepart[0]->codigo }}</h4>
                         </div>
                     </div>
                 </div>
@@ -66,7 +84,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Nombre</p>
-                            <h4 class="card-title">Antioquia</h4>
+                            <h4 class="card-title">{{ $DominiosDepart[0]->nombre }}</h4>
                         </div>
                     </div>
                 </div>
@@ -76,7 +94,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Tipo Estado</p>
-                            <h4 class="card-title">DEPARTAMENTO</h4>
+                            <h4 class="card-title">{{ $DominiosDepart[0]->tipo_estado }}</h4>
                         </div>
                     </div>
                 </div>
@@ -86,7 +104,7 @@
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Estado</p>
-                            <h4 class="card-title">ACTIVO</h4>
+                            <h4 class="card-title">{{ $DominiosDepart[0]->estado }}</h4>
                         </div>
                     </div>
                 </div>
@@ -110,13 +128,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>MEDELLIN</td>
-                                        <td>CUIDADES</td>
-                                        <td>ACTIVO</td>
-                                        <td>S</td>
-                                    </tr>
+                                    @foreach ($DominiosEstado as $item)
+                                        <tr>
+                                            <td>{{ $item->codigo }}</td>
+                                            <td>{{ $item->nombre }}</td>
+                                            <td>{{ $item->tipo_estado }}</td>
+                                            <td>{{ $item->estado }}</td>
+                                            <td>{{ $item->es_capital }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

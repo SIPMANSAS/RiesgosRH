@@ -25,42 +25,22 @@
 @section('contenido')
     <div class="page-inner mt--5">
         <div class="row row-card-no-pd mt--2">
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-6">
                 <div class="card card-stats card-primary card-round">
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
-                            <p class="card-category">Código</p>
-                            <h4 class="card-title">{{ $DominiosPais[0]->codigo }}</h4>
+                            <p class="card-category">Identificación</p>
+                            <h4 class="card-title">{{ $DominiosPadre[0]->identificacion }}</h4>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-6">
                 <div class="card card-stats card-primary card-round">
                     <div class="card-body">
                         <div class="numbers" style="text-align: center;">
                             <p class="card-category">Nombre</p>
-                            <h4 class="card-title">{{ $DominiosPais[0]->nombre }}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="card card-stats card-primary card-round">
-                    <div class="card-body">
-                        <div class="numbers" style="text-align: center;">
-                            <p class="card-category">Tipo Estado</p>
-                            <h4 class="card-title">{{ $DominiosPais[0]->tipo_estado }}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="card card-stats card-primary card-round">
-                    <div class="card-body">
-                        <div class="numbers" style="text-align: center;">
-                            <p class="card-category">Estado</p>
-                            <h4 class="card-title">{{ $DominiosPais[0]->estado }}</h4>
+                            <h4 class="card-title">{{ $DominiosPadre[0]->nombre }}</h4>
                         </div>
                     </div>
                 </div>
@@ -76,21 +56,27 @@
                             <table id="multi-filter-select" class="display table table-striped table-hover">
                                 <thead class="bg-primary text-white">
                                     <tr>
-                                        <th>Código</th>
+                                        <th>Grupo</th>
+                                        <th>Grupo Dominio</th>
+                                        <th>Clasificación</th>
                                         <th>Nombre</th>
-                                        <th>Tipo Estado</th>
-                                        <th>Estado</th>
+                                        <th>Descripción</th>
+                                        <th>Id Alfanumérico</th>
+                                        <th>Valor Padre</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($Dominios as $item)
                                         <tr>
                                             <td><a class="btn btn-primary"
-                                                    href="{{ url('Administrar/regiones/pais/estado/' . $DominiosPais[0]->codigo . '/' . $item->codigo) }}">{{ $item->codigo }}</a>
+                                                    href="{{ url('Administrar/regiones/pais/estado/') }}">{{ $item->grupo }}</a>
                                             </td>
+                                            <td>{{ $item->grupo_dominio }}</td>
+                                            <td>{{ $item->clasificacion }}</td>
                                             <td>{{ $item->nombre }}</td>
-                                            <td>{{ $item->tipo_estado }}</td>
-                                            <td>{{ $item->estado }}</td>
+                                            <td>{{ $item->descripcion }}</td>
+                                            <td>{{ $item->id_alfanumerico }}</td>
+                                            <td>{{ $item->valor_padre }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
