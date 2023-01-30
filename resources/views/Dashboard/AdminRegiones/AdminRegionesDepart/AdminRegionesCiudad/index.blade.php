@@ -23,7 +23,7 @@
             <h2 class="text-white pb-2 fw-bold">Administrar Regiones</h2>
         </div>
         <div class="ml-md-auto py-2 py-md-0">
-            <a href="{{ url('Administrar/regiones/pais/'. {{ $DominiosPais[0]->codigo }}) }}" class="btn btn-danger btn-round">Volver</a>
+            <a href="{{ url('Administrar/regiones/pais/'.$DominiosPais[0]->codigo) }}" class="btn btn-danger btn-round">Volver</a>
         </div>
     </div>
 @endsection
