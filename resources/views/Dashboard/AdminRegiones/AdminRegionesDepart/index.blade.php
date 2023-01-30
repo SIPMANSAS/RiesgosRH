@@ -18,14 +18,14 @@
     </script>
 @endpush
 @section('barra-superior')
-<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-    <div>
-        <h2 class="text-white pb-2 fw-bold">Administrar Regiones</h2>
+    <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+        <div>
+            <h2 class="text-white pb-2 fw-bold">Administrar Regiones</h2>
+        </div>
+        <div class="ml-md-auto py-2 py-md-0">
+            <a href="{{ url('Administrar/regiones') }}" class="btn btn-danger btn-round">Volver</a>
+        </div>
     </div>
-    <div class="ml-md-auto py-2 py-md-0">
-        <a href="{{ url('Administrar/regiones') }}" class="btn btn-danger">Volver</a>
-    </div>
-</div>
 @endsection
 @section('contenido')
     <div class="page-inner mt--5">
