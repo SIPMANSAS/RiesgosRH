@@ -20,7 +20,9 @@
 @section('barra-superior')
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
         <h2 class="text-white pb-2 fw-bold">Administrar Regiones</h2>
-        <a href="{{ url('Administrar/regiones/pais') }}" class="btn btn danger">Volver</a>
+        <div class="ml-md-auto py-2 py-md-0">
+        <a href="{{ url('Administrar/regiones/pais') }}" class="btn btn-danger">Volver</a>
+    </div>
     </div>
 @endsection
 @section('contenido')
