@@ -69,7 +69,7 @@
                                     @foreach ($Dominios as $item)
                                         <tr>
                                             <td><a class="btn btn-primary"
-                                                    href="{{ url('Administrar/regiones/pais/estado/') }}">{{ $item->grupo }}</a>
+                                                    href="{{ url('#') }}">{{ $item->grupo }}</a>
                                             </td>
                                             <td>{{ $item->grupo_dominio }}</td>
                                             <td>{{ $item->clasificacion }}</td>
