@@ -1,4 +1,4 @@
-@extends('layout/layout')
+@extends('Layout/layout')
 @push('scripts')
     <script>
         $(document).ready(function() {

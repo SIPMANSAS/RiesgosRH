@@ -1,4 +1,4 @@
-@extends('layout/layout')
+@extends('Layout/layout')
 @section('barra-superior')
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
         <h2 class="text-white pb-2 fw-bold">Administrar Regiones</h2>
