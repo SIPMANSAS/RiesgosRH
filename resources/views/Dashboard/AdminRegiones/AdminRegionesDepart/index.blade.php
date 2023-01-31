@@ -91,7 +91,7 @@
                                     @foreach ($Dominios as $item)
                                         <tr>
                                             <td><a class="btn btn-primary"
-                                                    href="{{ url('Administrar/regiones/pais/estado/' . $DominiosPais[0]->codigo . '/' . $item->codigo) }}">{{ $item->codigo }}</a>
+                                                    href="{{ url('Administrar/regiones/pais/' . $DominiosPais[0]->codigo . '/estado/' . $item->codigo) }}">{{ $item->codigo }}</a>
                                             </td>
                                             <td>{{ $item->nombre }}</td>
                                             <td>{{ $item->tipo_estado }}</td>

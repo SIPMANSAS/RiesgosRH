@@ -28,7 +28,7 @@ Route::get('Administrar/dominios/show/{id}', [AdminDominiosController::class, 'S
 
 Route::get('Administrar/regiones', [AdminRegionesController::class, 'index']);
 Route::get('Administrar/regiones/pais/{id}', [AdminRegionesController::class, 'ShowPais']);
-Route::get('Administrar/regiones/pais/estado/{idCountry}/{idDepart}', [AdminRegionesController::class, 'ShowEstado']);
+Route::get('Administrar/regiones/pais/{idCountry}/estado/{idDepart}', [AdminRegionesController::class, 'ShowEstado']);
 
 
 Route::get('import/documents', [ImportExportController::class, 'index']);
