@@ -17,7 +17,13 @@
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 {!! Form::label('vdom_tipo_identificacion') !!}
-                                {!! Form::select('asdas', $TipoIdentificacion->identificador, null, ['class' => 'form-control']) !!}
+                                <select name="" id="">
+                                    @foreach ($TipoIdentificacion as $item)
+                                    <option value="">{{$item->nombre}}</option>
+                                    @endforeach
+
+                                </select>
+                                {!! Form::select('asdas', null, null, ['class' => 'form-control']) !!}
                             </div>
                             <div class="col-sm-6 form-group">
                                 {!! Form::label('identificacion') !!}
