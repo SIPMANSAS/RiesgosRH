@@ -19,9 +19,8 @@
                                 {!! Form::label('vdom_tipo_identificacion') !!}
                                 <select name="" id="">
                                     @foreach ($TipoIdentificacion as $item)
-                                    <option value="">{{$item->nombre}}</option>
+                                        <option value="{{ $item->nombre }}">{{ $item->nombre }}</option>
                                     @endforeach
-
                                 </select>
                                 {!! Form::select('asdas', null, null, ['class' => 'form-control']) !!}
                             </div>
