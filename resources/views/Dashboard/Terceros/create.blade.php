@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 {!! Form::label('vdom_tipo_identificacion') !!}
-                                {{var_dump($TipoIdentificacion)}}
+                                
                                 <select name="" id="">
                                         <option value=""></option>
                                 </select>
