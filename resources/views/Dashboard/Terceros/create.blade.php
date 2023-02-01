@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 {!! Form::label('vdom_tipo_identificacion') !!}
-                                {!! Form::select('asdas', ['S' => 0], null, ['class' => 'form-control']) !!}
+                                {!! Form::select('asdas', $TipoIdentificacion, null, ['class' => 'form-control']) !!}
                             </div>
                             <div class="col-sm-6 form-group">
                                 {!! Form::label('identificacion') !!}
