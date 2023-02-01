@@ -353,6 +353,22 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('table').DataTable({
+                "order": [
+                    [2, 'asc']
+                ],
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
+                },
+                "lengthMenu": [
+                    [5, 10, -1],
+                    [5, 10, "Todos"]
+                ]
+            });
+        });
+    </script>
     @stack('scripts')
 </body>
 

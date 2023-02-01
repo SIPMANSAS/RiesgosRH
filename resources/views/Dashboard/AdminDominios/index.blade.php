@@ -1,19 +1,4 @@
 @extends('Layout/layout')
-@push('scripts')
-    <script>
-        $(document).ready(function() {
-            $('table').DataTable({
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
-                },
-                "lengthMenu": [
-                    [5, 10, -1],
-                    [5, 10, "Todos"]
-                ]
-            });
-        });
-    </script>
-@endpush
 @section('barra-superior')
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
         <h2 class="text-white pb-2 fw-bold">Administrar Dominios</h2>
