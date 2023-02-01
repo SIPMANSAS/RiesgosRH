@@ -27,6 +27,7 @@ class TerceroController extends Controller
     public function create()
     {
         $TipoIdentificacion = DB::select("CALL p_dominio(18)");
+        dd($TipoIdentificacion);
         return view('Dashboard.Terceros.create',compact('TipoIdentificacion'));
     }
 
