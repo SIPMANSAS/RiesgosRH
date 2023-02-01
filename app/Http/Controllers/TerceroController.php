@@ -15,8 +15,8 @@ class TerceroController extends Controller
      */
     public function index()
     {
-        $TipoIdentificacion = DB::select("CALL p_dominio(18)");
-        return view('Dashboard.Terceros.index',compact('TipoIdentificacion'));
+
+        return view('Dashboard.Terceros.index');
     }
 
     /**
@@ -26,7 +26,8 @@ class TerceroController extends Controller
      */
     public function create()
     {
-        return view('Dashboard.Terceros.create');
+        $TipoIdentificacion = DB::select("CALL p_dominio(18)");
+        return view('Dashboard.Terceros.create',compact('TipoIdentificacion'));
     }
 
     /**
