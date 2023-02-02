@@ -5,7 +5,7 @@
             <h2 class="text-white pb-2 fw-bold">Administrar Tercero</h2>
         </div>
         <div class="ml-md-auto py-2 py-md-0">
-            <a href="{{ route('tercero.create') }}" class="btn btn-secondary btn-round">Volver</a>
+            <a href="{{ route('tercero.create') }}" class="btn btn-secondary btn-round">Crear</a>
         </div>
     </div>
 @endsection
@@ -20,28 +20,31 @@
                                 <thead class="bg-primary text-white">
                                     <tr>
                                         <th>identificacion</th>
-                                        <th>identificacion</th>
-                                        <th>identificacion</th>
+                                        <th>nombre completo</th>
+                                        <th>correo electronico</th>
                                         <th>Aciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($Terceros as $tercero)
                                     <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
+                                        <td>{{$tercero->identificacion}}</td>
+                                        <td>{{$tercero->nombres}} {{$tercero->apellidos}}</td>
+                                        <td>{{$tercero->correo_electronico}}</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-primary dropdown-toggle"
                                                     data-toggle="dropdown" aria-expanded="false">
-                                                    Action
+                                                    acciones
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('tercero.edit',1) }}">Action</a>
+                                                    <a class="dropdown-item" href="{{ route('tercero.show',$tercero->identificacion) }}">Visualizar</a>
+                                                    <a class="dropdown-item" href="{{ route('tercero.edit',$tercero->identificacion) }}">Editar</a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

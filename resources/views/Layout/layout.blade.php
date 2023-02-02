@@ -297,7 +297,7 @@
         </div>
         <!-- End Sidebar -->
         <div class="main-panel">
-            <div class="content">
+            <div class="content text-capitalize">
                 <div class="panel-header bg-primary-gradient text-capitalize">
                     <div class="page-inner py-5">
                         @yield('barra-superior')

@@ -1,10 +1,11 @@
 <?php
-
+use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\ImportExportController;
 use App\Http\Controllers\AdminDominiosController;
 use App\Http\Controllers\AdminRegionesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ImportExportController;
+
 use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,10 @@ Route::post('import/CG_Valores_Dominio/{id}', [ImportExportController::class, 'I
 
 //Resource Create Edit Update
 Route::resource('tercero', TerceroController::class);
+
+// PETICIONES AJAX
+Route::post('ajax/getCountry/response/{id}', [AjaxController::class, 'getCountry']);
+Route::post('ajax/getdepartments/response/pais/{country}/departam/{depart}', [AjaxController::class, 'getDepartments']);
 
 //configuracion
 Route::get('/configuration', function () {
