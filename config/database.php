@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'sipman_riesgossoftdev'),
+            'database' => env('DB_DATABASE', 'sipman_RiesgosSoftDev'),
             'username' => env('DB_USERNAME', 'sipman_RiesgosSoftDev'),
             'password' => env('DB_PASSWORD', 'QwA^zg~%A.&!'),
             'unix_socket' => env('DB_SOCKET', ''),
