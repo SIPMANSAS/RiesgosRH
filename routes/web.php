@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Route::get('/', function () {
-    return redirect('tercero');
+    return redirect('proyectos');
 });
 
 Route::get('inicio', [HomeController::class, 'index']);
@@ -41,6 +41,7 @@ Route::post('import/CG_Valores_Dominio/{id}', [ImportExportController::class, 'I
 
 //Resource Create Edit Update
 Route::resource('tercero', TerceroController::class);
+Route::resource('proyectos', ProyectosController::class);
 
 // PETICIONES AJAX
 Route::post('ajax/getCountry/response/{id}', [AjaxController::class, 'getCountry']);
