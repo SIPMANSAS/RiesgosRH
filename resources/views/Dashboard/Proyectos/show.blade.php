@@ -15,19 +15,18 @@
             <div class="col-md-12">
                 <div class="card full-height">
                     <div class="card-body">
-                        {!! Form::model($Proyectos, ['method' => 'PATCH', 'route' => ['proyectos.update', $Proyectos->id_proyecto], 'files' => true]) !!}
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 {!! Form::label('# DE PROYECTO') !!}
                                 {!! Form::number('', $Proyectos->id_proyecto, ['class' => 'form-control', 'readonly']) !!}
                             </div>
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('NOMBRE DEL PROYECTO') !!} <span style="color: red">*</span>
-                                {!! Form::text('NombreProyecto', $Proyectos->nombre, ['class' => 'form-control','required']) !!}
+                                {!! Form::label('NOMBRE DEL PROYECTO') !!}
+                                {!! Form::text('NombreProyecto', $Proyectos->nombre, ['class' => 'form-control']) !!}
                             </div>
                             <div class="col-sm-4 form-group">
-                                {!! Form::label('CONTRATANTE') !!} <span style="color: red">*</span>
-                                <select name="Contratante" class="form-control" required>
+                                {!! Form::label('CONTRATANTE') !!}
+                                <select name="Contratante" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
                                     @foreach ($Contratante as $contratante)
                                         <option value="{{ $contratante->identificacion }}"
@@ -37,8 +36,8 @@
                                 </select>
                             </div>
                             <div class="col-sm-4 form-group">
-                                {!! Form::label('CONTRATISTA') !!} <span style="color: red">*</span>
-                                <select name="Contratista" class="form-control" required>
+                                {!! Form::label('CONTRATISTA') !!}
+                                <select name="Contratista" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
                                     @foreach ($Contratante as $contratante)
                                         <option value="{{ $contratante->identificacion }}"
@@ -48,8 +47,8 @@
                                 </select>
                             </div>
                             <div class="col-sm-4 form-group">
-                                {!! Form::label('INTERVENTORÍA ASIGNADA') !!} <span style="color: red">*</span>
-                                <select name="Interventoria" class="form-control" required>
+                                {!! Form::label('INTERVENTORÍA ASIGNADA') !!}
+                                <select name="Interventoria" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
                                     @foreach ($Contratante as $contratante)
                                         <option value="{{ $contratante->identificacion }}"
@@ -59,15 +58,15 @@
                                 </select>
                             </div>
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('OBJETO CONTRACTUAL') !!} <span style="color: red">*</span>
-                                {!! Form::text('ObjectoContractual', $Proyectos->objeto_contraactual, ['class' => 'form-control','required']) !!}
+                                {!! Form::label('OBJETO CONTRACTUAL') !!}
+                                {!! Form::text('ObjectoContractual', $Proyectos->objeto_contraactual, ['class' => 'form-control']) !!}
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
                         <div class="row">
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('ETAPA DEL PROYECTO') !!} <span style="color: red">*</span>
-                                <select name="EtapaProyecto" class="form-control" required>
+                                {!! Form::label('ETAPA DEL PROYECTO') !!}
+                                <select name="EtapaProyecto" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
                                     @foreach ($TipoActividad as $Tipoactividad)
                                         <option value="{{ $Tipoactividad->identificador }}"
@@ -77,8 +76,8 @@
                                 </select>
                             </div>
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('ACTIVIDADES') !!} <span style="color: red">*</span>
-                                <select name="Actividades" class="form-control" required>
+                                {!! Form::label('ACTIVIDADES') !!}
+                                <select name="Actividades" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
                                     @foreach ($TipoActividad as $Tipoactividad)
                                         <option value="{{ $Tipoactividad->identificador }}"
@@ -88,10 +87,10 @@
                                 </select>
                             </div>
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('RESPONSABLE') !!} <span style="color: red">*</span>
-                                <select name="Responsable" class="form-control" required>
+                                {!! Form::label('RESPONSABLE') !!}
+                                <select name="Responsable" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
-                                    @foreach ($Responsable as $contratante)
+                                    @foreach ($Contratante as $contratante)
                                         <option value="{{ $contratante->identificacion }}"
                                             @if ($Proyectos->id_responsable == $contratante->identificacion) selected @endif>{{ $contratante->nombres }}
                                             {{ $contratante->apellidos }}</option>
@@ -99,8 +98,8 @@
                                 </select>
                             </div>
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('DOCUMENTO / FORMATO ASOCIADO') !!} <span style="color: red">*</span>
-                                <select name="TipoDocumento" class="form-control" required>
+                                {!! Form::label('DOCUMENTO / FORMATO ASOCIADO') !!}
+                                <select name="TipoDocumento" class="form-control">
                                     <option value="" selected disabled>Seleccione la opcion</option>
                                     @foreach ($Documentacion as $documentacion)
                                         <option value="{{ $documentacion->identificador }}"
@@ -110,14 +109,11 @@
                                 </select>
                             </div>
                             <div class="col-sm-6 form-group">
-                                {!! Form::label('CARGAR DOCUMENTO / FORMATO EN PDF') !!} <span style="color: red">*</span>
-                                {!! Form::file('Documento', ['class' => 'form-control','required', 'accept' => '.pdf, .doc, .docx']) !!}
-                            </div>
-                            <div class="col-sm-12 form-group">
-                                {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}
+                                {!! Form::label('CARGAR DOCUMENTO / FORMATO EN PDF') !!}
+                                <a href="/{{ $Proyectos->archivos }}" target="_blank" class="btn btn-primary">Visualizar
+                                    Documento Adjuntado</a>
                             </div>
                         </div>
-                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

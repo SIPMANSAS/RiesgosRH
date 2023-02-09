@@ -7,6 +7,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,7 @@ use Illuminate\Support\Facades\Artisan;
 */
 
 Route::get('/', function () {
+    Artisan::call('storage:link');
     return redirect('proyectos');
 });
 
@@ -50,4 +53,10 @@ Route::post('ajax/getdepartments/response/pais/{country}/departam/{depart}', [Aj
 //configuracion
 Route::get('/configuration', function () {
     Artisan::call('migrate');
+});
+
+Route::get('logout', function () {
+    Auth::logout();
+    toastr()->info('Ha sido desconectado del sistema !!');
+    return redirect('login');
 });
